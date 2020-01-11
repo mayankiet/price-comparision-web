@@ -6,15 +6,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import java.util.List;
-
 public class FlipkartProductsPage extends BasePage {
 
-    @FindBy(css = "")
-    private List<WebElement> products;
+    @FindBy(css = "._3wU53n")
+    private WebElement products;
 
-    @FindBy(css = "")
-    private List<WebElement> price;
+    @FindBy(className = "_1vC4OE")
+    private WebElement price;
 
     public FlipkartProductsPage() {
         driver = DriverProvider.getDriver();
@@ -22,12 +20,11 @@ public class FlipkartProductsPage extends BasePage {
     }
 
     public void verifyIPhoneWrtSearchOnFlipkart() {
-        Assert.assertTrue(products.get(0).getText().contains("iPhone XR (64GB) - Yellow"));
-        products.get(0).click();
+        Assert.assertTrue(products.getText().contains("iPhone XR (64GB) - Yellow"));
     }
 
     public String getIPhonePriceOnFlipkart() {
-        String priceOnFlipkart = price.get(0).getText();
+        String priceOnFlipkart = price.getText();
         System.out.println(priceOnFlipkart);
         return priceOnFlipkart;
     }

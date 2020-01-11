@@ -41,10 +41,9 @@ public class VerifyPriceComparisionOnAmazonAndFlipkart extends TestBase {
     @Test(priority = 2)
     public void verifyGetIphonePriceFromFlipkart(){
         navigateToFlipkart();
-        flipkartHomePage.searchIPhone();
         flipkartProductsPage.verifyIPhoneWrtSearchOnFlipkart();
         priceOnFlipkart = flipkartProductsPage.getIPhonePriceOnFlipkart();
-        
+
         flipkartProductsPage.comparePrice(priceOnAmazon, priceOnFlipkart);
     }
 }
