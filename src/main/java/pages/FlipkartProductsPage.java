@@ -31,4 +31,16 @@ public class FlipkartProductsPage extends BasePage {
         System.out.println(priceOnFlipkart);
         return priceOnFlipkart;
     }
+
+    public void comparePrice(String priceAmazon, String priceFlipkart){
+        int amazonPrice = Integer.parseInt(priceAmazon);
+        int flipkartPrice = Integer.parseInt(priceFlipkart);
+
+        if(amazonPrice<flipkartPrice){
+            System.out.println(amazonPrice);
+        }
+        else {
+            System.out.println(flipkartPrice);
+        }
+    }
 }
